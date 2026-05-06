@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hair Salon Booking</title>
+
+    <!--Link to CSS file (styling)-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Book an Appointment</h1>
+
+    <!--User instructions for filling out form-->
+    <p id="description">Please fill out the following form to complete a reservation.</p>
+
+    <!--Reservation form-->
+    <form id="reservation">
+
+        <!--Service selection-->
+        <div class="form">
+            <label for="service">Select a Service:</label>
+            <select id="service" required>
+                <option value="haircut">Haircut</option>
+                <option value="coloring">Coloring</option>
+                <option value="blow-dry">Blow-Dry</option>
+            </select>
+        </div>
+
+        <!--Specialist selection-->
+        <div class="form">
+            <label for="specialist">Select a Specialist:</label>
+            <select id="specialist" required>
+                <option value="christina">Christina</option>
+                <option value="alex">Alex</option>
+            </select>
+        </div>
+
+        <!--Date selection in calendar-->
+        <div class="form">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" required>
+        </div>
+
+        <!--Time selection-->
+        <div class="form">
+            <label for="time">Select Time:</label>
+            <select id="time" required>
+                <option value="10AM">10AM</option>
+                <option value="11AM">11AM</option>
+                <option value="12PM">12PM</option>
+                <option value="1PM">1PM</option>
+                <option value="2PM">2PM</option>
+                <option value="3PM">3PM</option>
+                <option value="4PM">4PM</option>
+                <option value="5PM">5PM</option>
+            </select>
+        </div>
+
+        <!--Input of client name-->
+        <div class="form">
+            <label for="name">Client Name:</label>
+            <input type="text" id="name" placeholder="Client name" required>
+        </div>
+
+        <!--Reservation submission button-->
+        <div class="form">
+            <button type="submit">Book</button>
+        </div>
+    </form>
+
+    <!--Confirmation message displayed after successful submission-->
+    <p id="confirmation"></p>
+
+    <!--Link to JavaScript file (frontend)-->
+    <script src="script.js"></script>
+</body>
+
+</html>
