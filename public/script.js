@@ -1,8 +1,8 @@
-//Retrieving 'reservation' form from HTML
+//Retrieving reservation form from HTML
 const reservation = document.getElementById("reservation");
 
 //Listening for form submission 
-reservation.addEventListener("submit", function (event) {
+reservation.addEventListener("submit", async function (event) {
     event.preventDefault(); //Inputs will not reset after submitting form
 
     //Retrieving values from user input fields
@@ -12,10 +12,17 @@ reservation.addEventListener("submit", function (event) {
     const time = document.getElementById("time").value;
     const name = document.getElementById("name").value;
 
-    //User input values shown in console
-    console.log({ service, specialist, date, time, name });
+    //Sending reservation form inputs to backend with POST request 
+    const response = await fetch("/reserve", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }, //Specifying JSON format
+        body: JSON.stringify({ service, specialist, date, time, name }) //Converting JavaScript object to JSON string 
+    });
 
-    //Confirmation message to user after submitting reservation
-    document.getElementById("confirmation").innerText = "Reservation confirmed!";
+    //Converting backend JSON response to JavaScript object
+    const responseData = await response.json();
+
+    //Displaying reservation confirmation message to user from backend
+    document.getElementById("confirmation").innerText = responseData.message;
 });
 

@@ -1,13 +1,13 @@
 {
   "name": "hairsalon-booking",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A booking application for a hair salon",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Katerina Martinkaite",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
