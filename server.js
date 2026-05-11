@@ -34,6 +34,27 @@ app.post("/reserve", (request, response) => {
     });
 });
 
+//Retrieving all reservations
+app.get("/allReservations", (request, response) => {
+
+    //SQL statement to select all rows and columns in reservations table
+    const sql = `
+        SELECT * FROM reservations
+    `;
+
+    //Executing SQL SELECT statement
+    db.all(sql, [], (error, rows) => {
+        
+        //Database error handling
+        if (error) {
+            console.error(error.message);
+            return response.json({ message: "Database error" }); //Sending error response back to frontend
+        }
+
+        response.json(rows); //Sending reservation data back to frontend
+    });
+});
+
 //Starting a server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
