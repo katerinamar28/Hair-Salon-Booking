@@ -27,10 +27,15 @@ app.post("/reserve", (request, response) => {
         //Database error handling
         if (error) {
             console.error(error.message);
-            return response.json({ message: "Database error" }); //Sending error response back to frontend
+
+            //Special error message when double booking is prevented 
+            if (error.message.includes("UNIQUE constraint failed")) {
+                return response.json({ message: "This reservation time is already booked" });
+            }
+            return response.json({ message: "Database error" }); //Error message for other errors
         }
 
-        response.json({ message: "Reservation confirmed!" }); //Sending confirmation response back to frontend
+        response.json({ message: "Reservation confirmed!" }); //Reservation confirmation message
     });
 });
 

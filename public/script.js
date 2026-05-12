@@ -1,6 +1,15 @@
 //Retrieving reservation form from HTML
 const reservation = document.getElementById("reservation");
 
+//Retrieving date selection from HTML reservation form
+const selectedDate = document.getElementById("date");
+
+//Separating today's date from time, formatting in “YYYY-MM-DD” format
+const today = new Date().toISOString().split("T")[0];
+
+//Preventing calendar from allowing selection of past dates
+selectedDate.setAttribute("min", today);
+
 //Listening for form submission 
 reservation.addEventListener("submit", async function (event) {
     event.preventDefault(); //Inputs will not reset after submitting form

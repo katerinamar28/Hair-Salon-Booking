@@ -11,9 +11,11 @@ CREATE TABLE IF NOT EXISTS reservations (
     specialist TEXT NOT NULL,
     date TEXT NOT NULL,
     time TEXT NOT NULL,
-    name TEXT NOT NULL 
+    name TEXT NOT NULL,
+    UNIQUE(specialist, date, time)
 )
-`;
+`; 
+//Unique constraint - one specialist cant have the same date and time twice
 
 //Executing SQL statement to create a table
 db.run(createReservationTable);
