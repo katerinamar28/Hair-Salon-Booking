@@ -48,8 +48,8 @@ app.get("/allReservations", (request, response) => {
     `;
 
     //Executing SQL SELECT statement
-    db.all(sql, [], (error, rows) => {
-        
+    db.all(sql, [], function (error, rows) {
+
         //Database error handling
         if (error) {
             console.error(error.message);
@@ -57,6 +57,31 @@ app.get("/allReservations", (request, response) => {
         }
 
         response.json(rows); //Sending reservation data back to frontend
+    });
+});
+
+//Deleting reservation by id
+app.delete("/deleteReservation/:id", (request, response) => {
+
+    //Retrieving reservation id from delete request
+    const reservationId = request.params.id;
+
+    //SQL statement to delete reservation by its id
+    const sql = `
+       DELETE FROM reservations
+       WHERE id = ?
+   `;
+
+    //Executing SQL DELETE statement
+    db.run(sql, [reservationId], function (error) {
+
+        //Database error handling
+        if (error) {
+            console.error(error.message);
+            return response.json({ message: "Database error" }); //Error response back to frontend
+        }
+
+        response.json({ message: "Reservation deleted!" }); //Deletion confirmation message
     });
 });
 
