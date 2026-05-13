@@ -10,24 +10,26 @@
 </head>
 
 <body>
-    <h2>All Reservations</h2>
+    <h2>ALL RESERVATIONS</h2>
 
     <!--Table displaying reservations-->
-    <table id="reservationTable">
-        <thead>
-            <tr>
-                <th>Service</th>
-                <th>Specialist</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Name</th>
-                <th>Deletion</th> 
-            </tr>
-        </thead>
+    <div class="tableBox">
+        <table id="reservationTable">
+            <thead>
+                <tr>
+                    <th>SERVICE</th>
+                    <th>SPECIALIST</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                    <th>NAME</th>
+                    <th>DELETION</th>
+                </tr>
+            </thead>
 
-        <!--Actual reservation data in table rows-->
-        <tbody id="tableBody"></tbody>
-    </table>
+            <!--Actual reservation data in table rows-->
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
 
     <!--Confirmation message displayed after successful deletion-->
     <p id="deletionConfirmation"></p>

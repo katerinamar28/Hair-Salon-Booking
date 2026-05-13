@@ -1,0 +1,166 @@
+/*Page*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf7ef;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+/*Headings*/
+h1,
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*Form description text*/
+#description {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/*Reservation form*/
+form {
+    background-color: white;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 2px 14px #CB96A6;
+}
+
+/*Selectable field labels*/
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/*Service, specialist, date, time, name fields*/
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cecdcd;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/*Select and input field styling when they get focus*/
+select:focus,
+input:focus {
+    border: 1px solid #CB96A6;
+    outline: none;
+    box-shadow: 0 0 5px #CB96A6;
+}
+
+/*Select option text colors*/
+option {
+    color: #333;
+}
+
+option[value=""] {
+    color: #878686;
+}
+
+select:invalid {
+    color: #878686;
+}
+
+/*Date input text colors*/
+input[type="date"] {
+    color: #878686;
+}
+
+input[type="date"]:valid {
+    color: #333;
+}
+
+/*Reservation booking button*/
+.bookButton {
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/*Styling when hovering over buttons*/
+button:hover {
+    background-color: #CB96A6;
+    color: white;
+    box-shadow: 0 0 5px #CB96A6;
+    border: 1px solid #CB96A6;
+}
+
+/*Area around table*/
+.tableBox {
+    background-color: white;
+    max-width: 1000px;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 2px 14px #CB96A6;
+    overflow: auto;
+}
+
+/*Table*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+/*Table headers*/
+th {
+    border-bottom: 2px solid #CB96A6;
+    padding: 12px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+
+/*Table body*/
+td {
+    border-bottom: 1px solid #cecdcd;
+    padding: 3px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/*Reservation deletion button*/
+.deleteButton {
+    width: 80%;
+    padding: 6px;
+    background-color: white;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*Confirmation messages*/
+#confirmation,
+#deletionConfirmation {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}

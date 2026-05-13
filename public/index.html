@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Book an Appointment</h1>
+    <h1>BOOK AN APPOINTMENT</h1>
 
     <!--User instructions for filling out form-->
     <p id="description">Please fill out the following form to complete a reservation.</p>
@@ -20,33 +20,36 @@
 
         <!--Service selection-->
         <div class="form">
-            <label for="service">Select a Service:</label>
+            <label for="service">SERVICE:</label>
             <select id="service" required>
-                <option value="haircut">Haircut</option>
-                <option value="coloring">Coloring</option>
-                <option value="blow-dry">Blow-Dry</option>
+                <option value="" selected disabled>- Select a service -</option> 
+                <option value="Haircut">Haircut</option>
+                <option value="Coloring">Coloring</option>
+                <option value="Blow-Dry">Blow-Dry</option>
             </select>
         </div>
 
         <!--Specialist selection-->
         <div class="form">
-            <label for="specialist">Select a Specialist:</label>
+            <label for="specialist">SPECIALIST:</label>
             <select id="specialist" required>
-                <option value="christina">Christina</option>
-                <option value="alex">Alex</option>
+                <option value="" selected disabled>- Select a specialist -</option> 
+                <option value="Christina">Christina</option>
+                <option value="Alex">Alex</option>
             </select>
         </div>
 
         <!--Date selection in calendar-->
         <div class="form">
-            <label for="date">Select Date:</label>
+            <label for="date">DATE:</label>
             <input type="date" id="date" required>
         </div>
 
         <!--Time selection-->
         <div class="form">
-            <label for="time">Select Time:</label>
+            <label for="time">TIME:</label>
             <select id="time" required>
+                <option value="" selected disabled>- Select time -</option> 
                 <option value="10AM">10AM</option>
                 <option value="11AM">11AM</option>
                 <option value="12PM">12PM</option>
@@ -60,13 +63,13 @@
 
         <!--Input of client name-->
         <div class="form">
-            <label for="name">Client Name:</label>
-            <input type="text" id="name" placeholder="Client name" required>
+            <label for="name">CLIENT NAME:</label>
+            <input type="text" id="name" placeholder="Enter name" required>
         </div>
 
         <!--Reservation submission button-->
         <div class="form">
-            <button type="submit">Book</button>
+            <button class="bookButton" type="submit">BOOK</button>
         </div>
     </form>
 

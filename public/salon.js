@@ -23,7 +23,7 @@ async function showReservations() {
             <td>${reservation.time}</td>
             <td>${reservation.name}</td>
             <td>
-                <button onclick="deleteReservation(${reservation.id})">Delete</button>
+                <button class="deleteButton" onclick="deleteReservation(${reservation.id})">Delete</button>
             </td>
         `;
         //Adding a deletion button to the table
