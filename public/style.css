@@ -73,6 +73,11 @@ select:invalid {
     color: #878686;
 }
 
+/*Disabled time option color*/
+option:disabled {
+    color: #cecdcd;
+}
+
 /*Date input text colors*/
 input[type="date"] {
     color: #878686;

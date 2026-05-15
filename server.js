@@ -85,6 +85,32 @@ app.delete("/deleteReservation/:id", (request, response) => {
     });
 });
 
+//Retrieving reserved times for specific specialist and date
+app.get("/reservedTimes", (request, response) => {
+
+    //Retrieving specialist and date from request query
+    const { specialist, date } = request.query;
+
+    //SQL statement to select times taken by specific specialist and date
+    const sql = `
+        SELECT time FROM reservations
+        WHERE specialist = ? 
+        AND date = ?
+`;
+    //Executing SQL SELECT statement
+    db.all(sql, [specialist, date], function (error, rows) {
+
+        //Database error handling
+        if (error) {
+            console.error(error.message);
+            return response.json({ message: "Database error" }); //Error response back to frontend
+        }
+
+        response.json(rows); //Sending reserved times back to frontend
+    });
+
+});
+
 //Starting a server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
